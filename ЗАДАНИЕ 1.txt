@@ -1,0 +1,21 @@
+ЗАДАНИЕ 1 (на селекторы CSS)
+
+Сайт Гисметео
+
+Дневная температура сегодня:
+document.querySelectorAll('[data-row="temperature-air"] .values .maxt .unit_temperature_c')[0].innerText
+Завтра:
+document.querySelectorAll('[data-row="temperature-air"] .values .maxt .unit_temperature_c')[1].innerText
+Послезавтра:
+document.querySelectorAll('[data-row="temperature-air"] .values .maxt .unit_temperature_c')[2].innerText
+
+Сайт Яндекс Погоды
+
+Сегодня:
+document.querySelectorAll('.forecast-briefly__day .temp__value_with-unit')[2].innerText
+Завтра:
+document.querySelectorAll('.forecast-briefly__day .temp__value_with-unit')[4].innerText
+Послезавтра:
+document.querySelectorAll('.forecast-briefly__day .temp__value_with-unit')[6].innerText
+
+На Яндекс Погоде невозможно с помощью селекторов отобрать только четные по номеру значения температуры, поскольку :nth-of-type(even) приводит к неожиданному результату (температура днем и ночью на сегодня, тогда как при :nth-of-type(odd) - все остальные дни). При желании можно отфильтровать нужные значения в массиве уже потом, с помощью функции filter.
